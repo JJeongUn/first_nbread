@@ -1,0 +1,159 @@
+/* .photo {
+    text-align:center;
+    display:table;
+    border:1px solid #cecece;
+    width:500px;
+    height:500px;
+}
+
+.photo_box {
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.photo_img {
+    max-width:450px;
+    max-height:450px;
+}
+
+*/
+button.no-write-btn {
+    background-color: #FFCC76;
+    color: /* #917443; */ #000000;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    width: 120px;
+    height: 30px;
+    margin-top: 2px;
+}
+
+button.no-write-btn:hover {
+    background-color: #fca005;
+    color: #ffffff;
+}
+
+/* .photo 스타일 */
+.photo {
+    text-align: center;
+    display: table;
+    border: 1px solid #cecece;
+    width: 500px;
+    height: 500px;
+    margin: 20px auto; /* 상단 여백 조정 및 가운데 정렬 */
+}
+
+/* .photo_box 스타일 */
+.photo_box {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* .photo_img 스타일 */
+.photo_img {
+    max-width: 450px;
+    max-height: 450px;
+    display: block;
+    margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* 컨테이너 div에 대한 스타일 */
+.notice-container {
+    width: 500px;
+    margin: 0 auto;
+    border: 1px solid #ffed76;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 테이블 스타일 */
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 6px;
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+td,
+th {
+    padding-left: 8px;
+}
+
+thead tr {
+    height: 60px;
+    background: #FFED86;
+    font-size: 16px;
+}
+
+tbody tr {
+    height: 48px;
+    border-bottom: 1px solid #E3F1D5;
+}
+
+tbody tr:last-child {
+    border: 0;
+}
+
+td,th {
+    text-align: center;
+}
+
+td.l {
+    text-align: right;
+}
+
+td.c {
+    text-align: center;
+}
+
+td.r {
+    text-align: center;
+}
+
+/* 첫 번째 열에만 배경색 적용 */
+
+table th:first-child {
+    background-color: #FFED76;
+}
+
+tr.notice-section {
+	
+	margin: 10px;
+	height: 40px;
+	background-color: #FFF5B5;
+	
+}
+
+tbody.notice-body{
+	
+
+	background-color: #FFFDF3;
+	height: 100%;
+	margin: 10px;
+	
+}
+
+h2 {
+	color:	#E0892F;
+	
+}
+
+hr.line {
+	color: #FFED76;
+	}
+	
+div.search-container {
+	padding-top: 10px;
+	
+}

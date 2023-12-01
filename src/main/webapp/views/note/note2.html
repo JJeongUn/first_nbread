@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>Modal</title>
+
+    <style>
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: none;
+
+        background-color: #FFF9D7;
+      }
+
+      .modal.show {
+        display: block;
+      }
+
+      .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 800px;
+        height: 600px;
+
+        padding: 30px;
+
+        text-align: center;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+
+        transform: translateX(-50%) translateY(-50%);
+      }
+      
+       .modal_close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="modal">
+    <div class="modal_body">
+      <span class="modal_close">X</span>
+      Modal <br> 안녕
+    </div>
+  </div>
+  <button class="btn-open-popup">Modal 띄우기</button>
+  <div>
+    <div>
+      쪽지함 자체를 modal 창으로....?
+    </div>
+  </div>
+   <script>
+    const body = document.querySelector('body');
+    const modal = document.querySelector('.modal');
+    const btnOpenPopup = document.querySelector('.btn-open-popup');
+    const modalClose = document.querySelector('.modal_close');
+
+    btnOpenPopup.addEventListener('click', () => {
+      modal.classList.add('show');
+      body.style.overflow = 'hidden';
+    });
+
+    modalClose.addEventListener('click', () => {
+      modal.classList.remove('show');
+      body.style.overflow = 'auto';
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.classList.remove('show');
+        body.style.overflow = 'auto';
+      }
+    });
+  </script>
+  </body>
+</html>

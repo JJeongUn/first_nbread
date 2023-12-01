@@ -1,0 +1,138 @@
+@charset "UTF-8";
+/*  import google fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700");
+
+*{
+
+  font-family: "Poppins", sans-serif;
+}
+body{
+  background: 	#FFF9D7;
+}
+.container{
+  display: flex;
+}
+.notebox{
+  
+  position: relative;
+  top:0px;
+  bottom: 0;
+  height: 100vh;
+  left: 0px;
+  background: 	#FFED76;
+  width: 280px;
+  overflow: hidden;
+  box-shadow: 0 20px 30px rgba(72,67,33,0.25);
+}
+.notelist {
+	list-style: none;
+}
+
+.nav-item{
+  position: relative;
+  top: 12px;
+  margin-left: 10px;
+}
+a:hover{
+  background: #eee;
+}
+.logout{
+  position: absolute;
+  bottom: 10px;
+}
+
+/* 쪽지함 상단 */
+.main{
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: 90%;
+}
+
+.main{
+
+ 
+  padding: 10px 10px 30px 10px;
+  margin-top: 10px;
+  background: 		#FFF4B0;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+.main-top{
+  display: flex;
+  width: 100%;        
+}
+.main-top i{
+  position: absolute;
+  right: 0;
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+
+.main-middle{
+  display: flex;
+  width: 100%;
+}
+.main-middle i{
+  position: absolute;
+  right: 0;
+ 
+  margin: 10px 30px;
+  color: rgb(110, 109, 109);
+  cursor: pointer;
+}
+
+.main-box{
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.main-box .card{
+  width: 97%;
+  height: 90%;
+  
+  margin: 10px;
+  background: #fff;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+.noteboard {
+  display:flex ;
+  text-align: center;
+ 
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color: sandybrown;
+  border-style: dashed;
+  border-color: sandybrown;
+  border-width: 1px;
+
+
+}
+.main-box .card h3{
+  margin: 10px;
+  
+}
+.main-box .card p{
+  font-size: 12px;
+}
+.main-box .card button{
+  background: orangered;
+  color: #fff;
+  padding: 7px 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.main-box .card button:hover{
+  background: rgba(223, 70, 15, 0.856);
+}
+.main-box .card i{
+  font-size: 22px;
+  padding: 10px;
+}
+

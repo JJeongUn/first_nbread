@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.meber-bottom-box {
+	display : flex;
+	justify-content: center;
+}
+
+.meber-bottom-box a {
+	margin-right: 10px;
+}
+
+.meber-bottom-box a:last-child {
+	margin-right: 0px;
+}

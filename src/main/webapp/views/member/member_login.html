@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X_UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member_login</title>
+    <link rel="stylesheet" href="/comi/resources/css/member_login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+<script>
+    // 함수를 호출하여 페이지가 로드될 때 아이디 저장 여부를 확인합니다.
+    window.onload = function () {
+        var usernameInput = document.getElementById("username");
+        var rememberCheckbox = document.getElementById("rememberUsername");
+    
+        // 쿠키에서 아이디를 가져와서 아이디 필드에 설정합니다.
+        var savedUsername = getCookie("rememberedUsername");
+        if (savedUsername) {
+            usernameInput.value = savedUsername;
+        }
+    
+        // 체크박스의 상태에 따라 쿠키를 설정하거나 삭제합니다.
+        rememberCheckbox.addEventListener("change", function () {
+            if (this.checked) {
+                setCookie("rememberedUsername", usernameInput.value, 30); // 쿠키를 30일 동안 유지합니다.
+            } else {
+                deleteCookie("rememberedUsername");
+            }
+        });
+    };
+    
+    // 쿠키를 설정하는 함수
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    
+    // 쿠키를 가져오는 함수
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = cookies[i];
+            while (cookie.charAt(0) === ' ') {
+                cookie = cookie.substring(1, cookie.length);
+            }
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+    
+    // 쿠키를 삭제하는 함수
+    function deleteCookie(name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    }
+</script>
+</head>
+
+<body>
+    
+    <div class="wrapper">
+        <form action="/comi/login" method="post">
+            <h1>로그인</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" name="meid" required id="username">
+                <i class='bx bxs-user' name='bx'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" name="mepwd" required>
+                <i class='bx bxs-lock-alt' name="bx"></i>
+            </div>
+            
+            <div class="remember-forgot">
+                <!-- <label for="rememberUsername"><input type="checkbox" id="rememberUsername">아이디 저장</label> -->
+                <!-- <a href="/comi/views/member/member_pwd_find.html">비밀번호 찾기</a> -->
+            </div>
+            
+            <input type="submit" class="btn" name="login" value="로그인">
+            
+            <div class="register-link">
+                <p><a href="/comi/views/member/member_create.html">회원가입</a></p>
+            </div>
+        </form>
+    </div>
+<script src="/comi/resources/js/member_login.js"></script>    
+</body>
+
+</html>

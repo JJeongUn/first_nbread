@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <title>Modal</title>
+
+    <style>
+      .modal {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        /* modal창으로 바로 넘어감 */
+
+        background-color: #FFF9D7;
+      }
+
+      .modal.show {
+        display: block;
+       
+      }
+
+      .modal_body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+
+        width: 700px;
+        height: 500px;
+
+        padding: 25px;
+
+        text-align: center;
+
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.3);
+
+        transform: translateX(-50%) translateY(-50%);
+      }
+      
+       .modal_close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      cursor: pointer;
+    }
+    
+ .note_window {
+  text-align: left;
+    
+  }
+ .noteboard {
+ width: 600px;
+ height: 360px;
+ 
+ }
+ 
+ button {
+
+ background:#FFF4B0; 
+ color:#242110; 
+ padding: 7px 15px; 
+ border:none; 
+ border-radius: 15px; 
+ margin-top: 15px; 
+ cursor: pointer;
+ 
+ }
+ button:hover{
+  background: rgba(255, 231, 86, 0.856);
+}
+    
+.sita{
+background: rgba(218, 187, 255, 0.856);
+	color: #151219;
+ padding: 7px 15px; border:none; border-radius: 10px; margin-top: 15px; cursor: pointer;
+
+}    
+
+.sita:hover{
+	
+	
+	background: #A456FF; color: #fff;
+}    
+    
+    </style>
+    
+
+  </head>
+  <body>
+    <div class="modal">
+    <div class="modal_body">
+      <span class="modal_close">X</span>
+      
+      <nav class="note_window"> <button>받은 쪽지</button>
+      |&nbsp;<button >보낸 쪽지</button></nav>
+      
+      <br>
+     
+      <div class="card">
+        
+          <table class="noteboard" align="center" >
+           
+            <th>보낸 사람</th>
+            <th>제 목</th>
+            <th>날 짜</th>
+            <th>읽음 확인</th>
+            <tr><!-- 첫번째 줄 시작 -->
+                <td>연 아</td>
+                <td>넷플릭스 공구 문의</td>
+                <td>2023-08-22</td>
+                <td>읽음</td>
+            </tr><!-- 첫번째 줄 끝 -->
+            <tr><!-- 두번째 줄 시작 -->
+                <td>첫번째 칸</td>
+                <td>첫번째 칸</td>
+                <td>첫번째 칸</td>
+                <td>첫번째 칸</td>
+              
+            </tr><!-- 두번째 줄 끝 -->
+
+            <tr><!-- 세번째 줄 시작 -->
+              <td>첫번째 칸</td>
+              <td>첫번째 칸</td>
+              <td>첫번째 칸</td>
+              <td>첫번째 칸</td>
+            
+          </tr><!-- 세번째 줄 끝 -->
+
+            <tr><!-- 네번째 줄 시작 -->
+            <td>첫번째 칸</td>
+            <td>첫번째 칸</td>
+            <td>첫번째 칸</td>
+            <td>첫번째 칸</td>
+          
+          </tr><!-- 네번째 줄 끝 -->
+
+          <tr><!-- 다섯번째 줄 시작 -->
+          <td>첫번째 칸</td>
+          <td>첫번째 칸</td>
+          <td>첫번째 칸</td>
+          <td>첫번째 칸</td>
+        
+         </tr><!-- 다섯번째 줄 끝 -->
+        
+          <tr><!-- 여섯번째 줄 시작 -->
+          <td>첫번째 칸</td>
+          <td>첫번째 칸</td>
+          <td>첫번째 칸</td>
+          <td>첫번째 칸</td>
+      
+          </tr><!-- 여섯번째 줄 끝 -->
+
+          </table>
+
+          <button class="sita" > 답장하기 </button>
+        &nbsp;
+         <button class="sita" > 삭제하기 </button>
+        </div>
+    </div>
+  </div>
+  
+  <button class="btn-open-popup">쪽지확인</button>
+  <div>
+    <div>
+    쪽지함
+    </div>
+  </div>
+  
+    <script>
+    const body = document.querySelector('body');
+    const modal = document.querySelector('.modal');
+    const btnOpenPopup = document.querySelector('.btn-open-popup');
+    const modalClose = document.querySelector('.modal_close');
+
+    btnOpenPopup.addEventListener('click', () => {
+      modal.classList.add('show');
+      body.style.overflow = 'hidden';
+    });
+
+    modalClose.addEventListener('click', () => {
+    	  modal.classList.remove('show');
+    	  body.style.overflow = 'auto';
+    	  history.back(); /* 이전페이지로 */
+    	  
+    	});
+
+    	modal.addEventListener('click', (event) => {
+    	  if (event.target === modal) {
+    	    modal.classList.remove('show');
+    	    body.style.overflow = 'auto';
+    	   
+    	  }
+    	});
+  </script>   
+  </body>
+</html>
